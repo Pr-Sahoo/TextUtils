@@ -2,13 +2,14 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './Home';
-import About from './About';
+import About1 from './About1';
 import Contact from './Contact';
 import Help from './Component/Help';
 import Service from './Component/Service';
 import Navbar from './Component/Navbar';
 import Text from './Component/Text';
 import Dark from './Component/Dark';
+import About from './Component/About';
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
         <Navbar title="TextUtils" About="AboutUs"/>
         <div className="container">
           <Text heading ="Enter your text here"/>
+        </div>
+        <div>
+          <About/>
         </div>
         <Dark/>
         <div>
@@ -43,7 +47,7 @@ function App() {
           {/* define routes */}
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/about" element={<About1 />} />
             <Route path="/contact" element={<Contact />} />
             <Route path='/service' element={<Service />} />
             <Route path='/help' element={<Help />} />
