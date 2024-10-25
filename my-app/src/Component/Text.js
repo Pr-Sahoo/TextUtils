@@ -16,7 +16,21 @@ const Text = (props) => {
     let text = "";
     setText(text);
   }
-  
+  const handleCopy = () => {
+    var text = document.getElementById("exampleFormControlTextarea1");
+    text.select();
+    // text.setSelectionRange(0, 9999);
+    navigator.clipboard.writeText(text.value);
+  }
+  // const removeSpc = () => {
+  //   let test = document.getElementById("exampleFormControlTextarea1");
+  //   test.value = test.value.replace(/\s+/g, " ").trim();
+  // }
+  const removeSpc = () => {
+    let test = document.getElementById("exampleFormControlTextarea1");
+    test.value = test.value.replace(/\s+/g, " ").trim();
+  }
+
   const handleOnChange = (event) => {
     setText(event.target.value)
   }
@@ -28,6 +42,8 @@ return (
     <textarea className="form-control my-3" id="exampleFormControlTextarea1" onChange={handleOnChange} value={Text} rows="8"></textarea>
     <button type='buttton' onClick={Upper} className='btn btn-primary mx-2'>To Uppercase</button>
     <button type='button' onClick={lower} className='btn btn-secondary mx-2'>To lowercase</button>
+    <button type='button' onClick={handleCopy} className='btn btn-info mx-2'>Copy text</button>
+    <button type='button' onClick={removeSpc} className='btn btn-info mx-2'>Remove Space</button>
     <button type='button' onClick={clear} className='btn btn-info mx-2'>Clear</button>
   </div>
   <div className='container text-secondary'>
